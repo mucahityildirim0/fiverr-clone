@@ -1,101 +1,73 @@
 import React from "react";
-import "./App.css";
+import "./App.scss";
 import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+import Home from "./pages/home/Home.jsx";
+import MyGigs from "./pages/myGigs/MyGigs.jsx";
+import Gigs from "./pages/gigs/Gigs.jsx";
+import Gig from "./pages/gig/Gig.jsx";
+import Add from "./pages/add/Add.jsx";
+import Orders from "./pages/orders/Orders";
+import Messages from "./pages/messages/Messages.jsx";
+import Message from "./pages/message/Message.jsx";
+
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 function App() {
+  const Layout = () => {
+    return (
+      <>
+        <Navbar />
+        <Outlet />
+        <Footer />
+      </>
+    );
+  };
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
+        {
+          path: "/gigs",
+          element: <Gigs />,
+        },
+        {
+          path: "/gig:id",
+          element: <Gig />,
+        },
+        {
+          path: "/orders",
+          element: <Orders />,
+        },
+        {
+          path: "/mygigs",
+          element: <MyGigs />,
+        },
+        {
+          path: "/add",
+          element: <Add />,
+        },
+        {
+          path: "/messages",
+          element: <Messages />,
+        },
+        {
+          path: "/message/:id",
+          element: <Message />,
+        },
+      ],
+    },
+  ]);
+
   return (
     <div className="App">
-      <Navbar />
-      <h1>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto, ut
-        quis. Totam temporibus alias corporis vitae, nisi quibusdam libero et
-        architecto neque dignissimos similique sequi illo nostrum.
-        Exercitationem magnam unde molestiae asperiores necessitatibus excepturi
-        suscipit possimus aliquam. Voluptas corporis eligendi pariatur deleniti
-        nostrum officia, voluptatem similique officiis perspiciatis distinctio
-        cupiditate
-      </h1>
-      <h1>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto, ut
-        quis. Totam temporibus alias corporis vitae, nisi quibusdam libero et
-        architecto neque dignissimos similique sequi illo nostrum.
-        Exercitationem magnam unde molestiae asperiores necessitatibus excepturi
-        suscipit possimus aliquam. Voluptas corporis eligendi pariatur deleniti
-        nostrum officia, voluptatem similique officiis perspiciatis distinctio
-        cupiditate
-      </h1>
-      <h1>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto, ut
-        quis. Totam temporibus alias corporis vitae, nisi quibusdam libero et
-        architecto neque dignissimos similique sequi illo nostrum.
-        Exercitationem magnam unde molestiae asperiores necessitatibus excepturi
-        suscipit possimus aliquam. Voluptas corporis eligendi pariatur deleniti
-        nostrum officia, voluptatem similique officiis perspiciatis distinctio
-        cupiditate
-      </h1>
-      <h1>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto, ut
-        quis. Totam temporibus alias corporis vitae, nisi quibusdam libero et
-        architecto neque dignissimos similique sequi illo nostrum.
-        Exercitationem magnam unde molestiae asperiores necessitatibus excepturi
-        suscipit possimus aliquam. Voluptas corporis eligendi pariatur deleniti
-        nostrum officia, voluptatem similique officiis perspiciatis distinctio
-        cupiditate
-      </h1>
-      <h1>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto, ut
-        quis. Totam temporibus alias corporis vitae, nisi quibusdam libero et
-        architecto neque dignissimos similique sequi illo nostrum.
-        Exercitationem magnam unde molestiae asperiores necessitatibus excepturi
-        suscipit possimus aliquam. Voluptas corporis eligendi pariatur deleniti
-        nostrum officia, voluptatem similique officiis perspiciatis distinctio
-        cupiditate
-      </h1>
-      <h1>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto, ut
-        quis. Totam temporibus alias corporis vitae, nisi quibusdam libero et
-        architecto neque dignissimos similique sequi illo nostrum.
-        Exercitationem magnam unde molestiae asperiores necessitatibus excepturi
-        suscipit possimus aliquam. Voluptas corporis eligendi pariatur deleniti
-        nostrum officia, voluptatem similique officiis perspiciatis distinctio
-        cupiditate
-      </h1>
-      <h1>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto, ut
-        quis. Totam temporibus alias corporis vitae, nisi quibusdam libero et
-        architecto neque dignissimos similique sequi illo nostrum.
-        Exercitationem magnam unde molestiae asperiores necessitatibus excepturi
-        suscipit possimus aliquam. Voluptas corporis eligendi pariatur deleniti
-        nostrum officia, voluptatem similique officiis perspiciatis distinctio
-        cupiditate
-      </h1>
-      <h1>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto, ut
-        quis. Totam temporibus alias corporis vitae, nisi quibusdam libero et
-        architecto neque dignissimos similique sequi illo nostrum.
-        Exercitationem magnam unde molestiae asperiores necessitatibus excepturi
-        suscipit possimus aliquam. Voluptas corporis eligendi pariatur deleniti
-        nostrum officia, voluptatem similique officiis perspiciatis distinctio
-        cupiditate
-      </h1>
-      <h1>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto, ut
-        quis. Totam temporibus alias corporis vitae, nisi quibusdam libero et
-        architecto neque dignissimos similique sequi illo nostrum.
-        Exercitationem magnam unde molestiae asperiores necessitatibus excepturi
-        suscipit possimus aliquam. Voluptas corporis eligendi pariatur deleniti
-        nostrum officia, voluptatem similique officiis perspiciatis distinctio
-        cupiditate
-      </h1>
-      <h1>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto, ut
-        quis. Totam temporibus alias corporis vitae, nisi quibusdam libero et
-        architecto neque dignissimos similique sequi illo nostrum.
-        Exercitationem magnam unde molestiae asperiores necessitatibus excepturi
-        suscipit possimus aliquam. Voluptas corporis eligendi pariatur deleniti
-        nostrum officia, voluptatem similique officiis perspiciatis distinctio
-        cupiditate
-      </h1>
+      <RouterProvider router={router} />
     </div>
   );
 }
